@@ -11,6 +11,6 @@ class MainWindow : public QMainWindow {
 	public:
 		MainWindow();
 	private:
-		QLabel *textLabel;
+		QLabel *textLabel1, *textLabel2;
 };
 #endif
