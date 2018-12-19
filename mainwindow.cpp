@@ -1,28 +1,34 @@
 #include <QtGui>
 #include "mainwindow.h"
-#include "troad.h"
+#include "tcar.h"
 
 MainWindow::MainWindow() {
-	setWindowTitle(tr("TRoad"));
-	setFixedSize(320, 200);
+	setWindowTitle(tr("TCAR"));
+	setFixedSize(320, 300);
 	
-	TRoad road;
-	road.length = 300;
-	road.width = 3;
+	TCar car(100, 200);
 	
-	QString roadLength;
-	roadLength.setNum(road.length);
+	QString x;
+	x.setNum(car.x);
 	
-	QString roadWidth;
-	roadWidth.setNum(road.width);
+	QString p;
+	p.setNum(car.p);
 	
-	lengthLabel = new QLabel(this);
-	lengthLabel->setGeometry(20, 5, 300, 120);
-	lengthLabel->setFont(QFont("Courier", 20, QFont::Normal));
-	lengthLabel->setText("Road Length = " + roadLength);
+	QString v;
+	v.setNum(car.v);
 	
-	widthLabel = new QLabel(this);
-	widthLabel->setGeometry(20, 5, 300, 200);
-	widthLabel->setFont(QFont("Courier", 20, QFont::Normal));
-	widthLabel->setText("Road Width = " + roadWidth);
+	xCarLabel = new QLabel(this);
+	xCarLabel->setGeometry(20, 5, 300, 120);
+	xCarLabel->setFont(QFont("Courier", 20, QFont::Normal));
+	xCarLabel->setText("Car x = " + x);
+	
+	pCarLabel = new QLabel(this);
+	pCarLabel->setGeometry(20, 40, 300, 120);
+	pCarLabel->setFont(QFont("Courier", 20, QFont::Normal));
+	pCarLabel->setText("Car p = " + p);
+	
+	vCarLabel = new QLabel(this);
+	vCarLabel->setGeometry(20, 75, 300, 120);
+	vCarLabel->setFont(QFont("Courier", 20, QFont::Normal));
+	vCarLabel->setText("Car v = " + v);
 }

@@ -11,6 +11,6 @@ class MainWindow : public QMainWindow {
 	public:
 		MainWindow();
 	private:
-		QLabel *widthLabel, *lengthLabel;
+		QLabel *xCarLabel, *vCarLabel, *pCarLabel;
 };
 #endif
