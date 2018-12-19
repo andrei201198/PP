@@ -1,25 +1,28 @@
 #include <QtGui>
 #include "mainwindow.h"
+#include "troad.h"
 
 MainWindow::MainWindow() {
-	setWindowTitle(tr("Zadanie 2"));
+	setWindowTitle(tr("TRoad"));
 	setFixedSize(320, 200);
 	
-	int redColor = 255;
-	QString strRedColor;
-	strRedColor.setNum(redColor);
+	TRoad road;
+	road.length = 300;
+	road.width = 3;
 	
-	int greenColor = 120;
-	QString strGreenColor;
-	strGreenColor.setNum(greenColor);
+	QString roadLength;
+	roadLength.setNum(road.length);
 	
-	textLabel1 = new QLabel(this);
-	textLabel1->setGeometry(20, 5, 300, 120);
-	textLabel1->setFont(QFont("Courier", 20, QFont::Normal));
-	textLabel1->setText("Red Color = " + strRedColor);
+	QString roadWidth;
+	roadWidth.setNum(road.width);
 	
-	textLabel2 = new QLabel(this);
-	textLabel2->setGeometry(20, 5, 300, 200);
-	textLabel2->setFont(QFont("Courier", 20, QFont::Normal));
-	textLabel2->setText("Green Color = " + strGreenColor);
+	lengthLabel = new QLabel(this);
+	lengthLabel->setGeometry(20, 5, 300, 120);
+	lengthLabel->setFont(QFont("Courier", 20, QFont::Normal));
+	lengthLabel->setText("Road Length = " + roadLength);
+	
+	widthLabel = new QLabel(this);
+	widthLabel->setGeometry(20, 5, 300, 200);
+	widthLabel->setFont(QFont("Courier", 20, QFont::Normal));
+	widthLabel->setText("Road Width = " + roadWidth);
 }
