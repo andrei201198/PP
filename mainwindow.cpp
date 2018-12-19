@@ -1,34 +1,29 @@
 #include <QtGui>
 #include "mainwindow.h"
-#include "tcar.h"
+#include "tbook.h"
+#include <string>
+
+TBook book("book_1", "author_1", 999);
 
 MainWindow::MainWindow() {
-	setWindowTitle(tr("TCAR"));
-	setFixedSize(320, 300);
+	setWindowTitle(tr("TBook"));
+	setFixedSize(380, 150);
 	
-	TCar car(100, 200);
+	nameLabel = new QLabel(this);
+	nameLabel->setGeometry(20, 5, 300, 20);
+	nameLabel->setFont(QFont("Times", 18, QFont::Normal));
+	nameLabel->setText("Name = " + book.name);
 	
-	QString x;
-	x.setNum(car.x);
+	authorLabel = new QLabel(this);
+	authorLabel->setGeometry(20, 40, 300, 20);
+	authorLabel->setFont(QFont("Times", 18, QFont::Normal));
+	authorLabel->setText("Author = " + book.author);
 	
-	QString p;
-	p.setNum(car.p);
+	countLabel = new QLabel(this);
+	countLabel->setGeometry(20, 75, 300, 20);
+	countLabel->setFont(QFont("Times", 18, QFont::Normal));
+	QString count;
+	count.setNum(book.count);
+	countLabel->setText("Count = " + count);
 	
-	QString v;
-	v.setNum(car.v);
-	
-	xCarLabel = new QLabel(this);
-	xCarLabel->setGeometry(20, 5, 300, 120);
-	xCarLabel->setFont(QFont("Courier", 20, QFont::Normal));
-	xCarLabel->setText("Car x = " + x);
-	
-	pCarLabel = new QLabel(this);
-	pCarLabel->setGeometry(20, 40, 300, 120);
-	pCarLabel->setFont(QFont("Courier", 20, QFont::Normal));
-	pCarLabel->setText("Car p = " + p);
-	
-	vCarLabel = new QLabel(this);
-	vCarLabel->setGeometry(20, 75, 300, 120);
-	vCarLabel->setFont(QFont("Courier", 20, QFont::Normal));
-	vCarLabel->setText("Car v = " + v);
 }
